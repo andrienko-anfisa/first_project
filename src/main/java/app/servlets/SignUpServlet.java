@@ -43,7 +43,8 @@ public class SignUpServlet extends HttpServlet {
             request.setAttribute("login", request.getParameter("login"));
             request.setAttribute("password", request.getParameter("password"));
             request.getSession().setAttribute("id",usersDataSet.getId());
-//            request.setAttribute("role",authorities);
+            request.getSession().setAttribute("isAdmin",false);
+            request.getSession().setAttribute("isUser",true);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/firstPage.jsp");
             requestDispatcher.forward(request, response);
 
